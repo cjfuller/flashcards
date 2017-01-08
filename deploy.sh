@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git checkout gh_pages
+git checkout gh-pages
 git merge master
 GIT_HASH=`git log -n 1 --format=%h`
 git rm app_*.js
