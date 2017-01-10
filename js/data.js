@@ -145,7 +145,7 @@ const cardData: CardType[] = [
     },
     {
         front: "essayer; 3rd person plural",
-        back: "vous essaient",
+        back: "ils essaient",
     },
 ];
 
