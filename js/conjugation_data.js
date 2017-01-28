@@ -1,6 +1,6 @@
 //@flow
 
-import {CardType} from "./types.js";
+import type {CardType} from "./types.js";
 
 const cardData: CardType[] = [
     {
