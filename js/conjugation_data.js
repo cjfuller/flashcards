@@ -1,6 +1,6 @@
 //@flow
 
-import {CardType} from "./types.js";
+import type {CardType} from "./types.js";
 
 const cardData: CardType[] = [
     {
@@ -145,7 +145,7 @@ const cardData: CardType[] = [
     },
     {
         front: "essayer; 3rd person plural",
-        back: "vous essaient",
+        back: "ils essaient",
     },
 ];
 

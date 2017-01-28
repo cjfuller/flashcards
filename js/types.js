@@ -15,3 +15,5 @@ export type CardType = {
     front: string,
     back: string,
 };
+
+export type CardKind = "conjugation" | "vocab";

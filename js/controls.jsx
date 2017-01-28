@@ -54,9 +54,17 @@ export default class Controls extends React.Component {
         this.props.dispatch(Actions.shuffle());
     }
 
+    showConjugations() {
+        this.props.dispatch(Actions.switchCardKind("conjugation"));
+    }
+
+    showVocab() {
+        this.props.dispatch(Actions.switchCardKind("vocab"));
+    }
+
     render() {
         return <div className={css(styles.controlBar)}>
-            <Button text="Flip" action={() => this.flipCard()} />
+            <Button text="Flip all cards" action={() => this.flipCard()} />
             <Button
                 text="Next"
                 disabled={this.props.currentCard >= this.props.numCards - 1}
@@ -67,7 +75,15 @@ export default class Controls extends React.Component {
                 disabled={this.props.currentCard === 0}
                 action={() => this.prevCard()}
             />
-        <Button text="Shuffle and restart" action={() => this.shuffle()} />
+            <Button text="Shuffle and restart" action={() => this.shuffle()} />
+            <Button
+                action={() => this.showConjugations()}
+                text="Load conjugations"
+            />
+            <Button
+                action={() => this.showVocab()}
+                text="Load vocab"
+            />
         </div>;
     }
 }

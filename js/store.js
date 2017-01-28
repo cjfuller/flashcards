@@ -8,10 +8,11 @@ import type {StoreType, ActionType} from "./types.js";
 import {ActionTypes} from "./actions.js";
 
 // TODO: mechanism for importing / exporting / editing card data.
-import cardData from "./data.js";
+import conjugationCardData from "./conjugation_data.js";
+import vocabCardData from "./vocab_data.js";
 
 const initialState: StoreType = {
-    cards: cardData,
+    cards: conjugationCardData,
     loc: "home",
     cardIndex: 0,
     cardState: "front",
@@ -51,7 +52,13 @@ reducers[ActionTypes.ShuffleT] = (state, action) => {
         ...state,
         cards: _.shuffle(state.cards),
         cardIndex: 0,
-        cardState: "front",
+    };
+};
+
+reducers[ActionTypes.CardKindT] = (state, action) => {
+    return {
+        ...state,
+        cards: action.kind === "vocab" ? vocabCardData : conjugationCardData,
     };
 };
 
